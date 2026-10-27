@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SurfVR — Where you look is where you go | Official Landing Page</title>
+  <meta name="description" content="Simulador y Arcade de Surf con física analítica real, 5 playas legendarias, 7 tablas personalizables, modo libre en la arena y soporte VR para PC, macOS, iPhone y Android.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- =====================================================================
+       STICKY SEA GLASS NAVBAR + REACTIVE LIVE SESSION STRIP
+       ===================================================================== -->
+  <div class="site-nav-outer">
+    <nav class="site-nav">
+      <a href="#hero" class="nav-brand">
+        <span class="nav-brand-logo">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <path d="M2 13c2.5-3 5-3 7.5 0s5 3 7.5 0 4.5-3 5 0"/>
+            <path d="M2 18c2.5-3 5-3 7.5 0s5 3 7.5 0 4.5-3 5 0"/>
+          </svg>
+        </span>
+        <span>SurfVR</span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#como-funciona" class="nav-link">Cómo funciona</a></li>
+        <li><a href="#modalidades" class="nav-link">Modalidades</a></li>
+        <li><a href="#playas" class="nav-link">5 Playas</a></li>
+        <li><a href="#tablas" class="nav-link">7 Tablas</a></li>
+        <li><a href="#personalizacion" class="nav-link">Personalización</a></li>
+        <li><a href="#tiendas" class="nav-link">Tiendas</a></li>
+        <li><a href="#galeria" class="nav-link">Capturas</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="wallet-chip" class="money-chip" title="Dinero reactivo: completa misiones o haz clic para +$250 de prueba">
+          <span class="coin-dot"></span>
+          <span id="wallet-amount">$500</span>
+          <span id="wallet-delta" class="money-delta"></span>
+        </button>
+        <a href="#descargas" class="btn-primary" style="padding: 8px 16px; font-size: 0.85rem;">Descargar →</a>
+        <button id="mobile-menu-toggle" class="mobile-menu-btn" aria-label="Menú">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.2" fill="none">
+            <path d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Reactive Session Strip (updates as user interacts with Beaches, Boards, Start Modes) -->
+    <div class="live-session-bar-wrap">
+      <div class="live-session-bar">
+        <div class="session-strip-chips">
+          <span style="font-weight: 800; color: var(--aqua); letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.72rem;">TU SESIÓN ACTIVA:</span>
+          <span class="chip" id="session-beach-chip">Pipeline</span>
+          <span class="chip chip-aqua" id="session-cond-chip">
+            <span class="dot" id="session-cond-dot"></span>
+            <span id="session-cond-text">VERY GOOD</span>
+          </span>
+          <span class="chip" id="session-size-chip">9-11 ft · ← Left</span>
+          <span class="chip" id="session-board-chip">FUNBOARD (7'10")</span>
+          <span class="chip" id="session-start-chip">Start: Lineup</span>
+        </div>
+        <span style="color: var(--text-tertiary); font-size: 0.76rem;">Interactúa con las playas, tablas y misiones abajo ↓</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       HERO SECTION + 4-PLATFORM DOWNLOAD ZONE
+       ===================================================================== -->
+  <header id="hero" class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <span class="chip chip-aqua">
+            <span class="dot"></span>
+            SIMULADOR & ARCADE DE SURF · SEA GLASS EDITION
+          </span>
+          <h1 class="hero-title">SurfVR</h1>
+          <p class="hero-tagline">“Where you look is where you go.”</p>
+          <p class="hero-desc">
+            Siente la hidrodinámica real de una ola viva calculada analíticamente desde el fondo marino. Corre tubos cristalinos en <strong>Pipeline</strong> o desafía paredes de 40 pies en <strong>Nazaré</strong>, camina por la arena, cumple misiones del salvavidas, pinta tus 7 tablas y surfea en PC, Mac, iPhone VR o Android.
+          </p>
+
+          <!-- ZONA DE DESCARGAS PRINCIPAL -->
+          <div class="download-zone">
+            <div class="download-zone-label">Descarga Oficial Multiplataforma</div>
+            <div class="download-grid">
+              <!-- 1. PC / WINDOWS (.EXE) -->
+              <a href="./downloads/SurfVR-Windows-x64.exe" class="dl-btn dl-windows" data-download-platform="windows">
+                <div class="dl-icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3 3h8.5v8.5H3V3zm9.5 0H21v8.5h-8.5V3zM3 12.5h8.5V21H3v-8.5zm9.5 0H21V21h-8.5v-8.5z"/>
+                  </svg>
+                </div>
+                <div class="dl-meta">
+                  <span class="dl-sub">Descargar para PC</span>
+                  <span class="dl-main">Windows</span>
+                  <span class="dl-ext">.EXE · 64-bit Directo</span>
+                </div>
+              </a>
+
+              <!-- 2. macOS (Mac App Store Logo) -->
+              <a href="https://apps.apple.com/app/surfvr-macos" class="dl-btn dl-macos" data-download-platform="macos">
+                <div class="dl-icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.33c.64-.78 1.08-1.86.96-2.94-.93.04-2.06.62-2.72 1.4-.58.68-1.1 1.79-.96 2.84 1.04.08 2.08-.52 2.72-1.3z"/>
+                  </svg>
+                </div>
+                <div class="dl-meta">
+                  <span class="dl-sub">Download on the</span>
+                  <span class="dl-main">Mac App Store</span>
+                  <span class="dl-ext">macOS App Store</span>
+                </div>
+              </a>
+
+              <!-- 3. iPhone (App Store Logo) -->
+              <a href="https://apps.apple.com/app/surfvr-ios" class="dl-btn dl-iphone" data-download-platform="iphone">
+                <div class="dl-icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm3.41 14.59a.996.996 0 01-1.37-.36l-.77-1.33H8.73l-.77 1.33a1 1 0 01-1.73-1l2.86-4.95-1.03-1.78a1 1 0 111.73-1l.58 1 .58-1a1 1 0 111.73 1l-3.27 5.66h3.54l-.95-1.65a1 1 0 011.73-1l1.94 3.36c.28.48.11 1.09-.36 1.37zm1.59-3.69h-2.12a1 1 0 110-2H17a1 1 0 110 2z"/>
+                  </svg>
+                </div>
+                <div class="dl-meta">
+                  <span class="dl-sub">Download on the</span>
+                  <span class="dl-main">App Store</span>
+                  <span class="dl-ext">iPhone & Visor VR</span>
+                </div>
+              </a>
+
+              <!-- 4. ANDROID (Robot "Androidsito" + Available on Android + .APK) -->
+              <a href="./downloads/SurfVR-Android.apk" class="dl-btn dl-android" data-download-platform="android">
+                <div class="dl-icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85a.637.637 0 00-.83.22l-1.88 3.24a11.43 11.43 0 00-8.94 0L5.65 5.67a.643.643 0 00-.87-.2c-.28.18-.37.54-.22.83L6.4 9.48A10.81 10.81 0 001 18h22a10.81 10.81 0 00-5.4-8.52zM7 15.25a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5zm10 0a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5z"/>
+                  </svg>
+                </div>
+                <div class="dl-meta">
+                  <span class="dl-sub">Instalador Directo .APK</span>
+                  <span class="dl-main">Available on Android</span>
+                  <span class="dl-ext">Descargar .APK</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Hero Stage -->
+        <div class="hero-stage">
+          <div class="hero-screen-frame" id="hero-frame-lightbox">
+            <img id="hero-main-img" class="hero-main-img" src="assets/screenshots/barrel_ride.png" alt="SurfVR Gameplay">
+            <div class="hud-float-pill top-left" id="hero-hud-top">
+              <span class="chip-mint" style="padding:2px 8px; border-radius:99px; font-size:0.7rem;">EXCELLENT</span>
+              <span>THIS WAVE · 8.10</span>
+            </div>
+            <div class="hud-float-pill bottom-right" id="hero-hud-bottom">
+              <span style="color: var(--aqua);">∿ Barrel</span>
+              <span class="keycap">S</span>
+              <span>32 km/h</span>
+            </div>
+          </div>
+
+          <div class="hero-thumbs">
+            <button class="hero-thumb-btn active" data-hero-shot="assets/screenshots/barrel_ride.png" data-hud-top="THIS WAVE · EXCELLENT 8.10" data-hud-bottom="∿ Barrel [S] · 32 km/h">
+              <img src="assets/screenshots/barrel_ride.png" alt="En el Tubo">
+              <span>En el Tubo · 32 km/h</span>
+            </button>
+            <button class="hero-thumb-btn" data-hero-shot="assets/screenshots/main_menu.png" data-hud-top="MENÚ SEA GLASS" data-hud-bottom="Where you look is where you go">
+              <img src="assets/screenshots/main_menu.png" alt="Menú Principal">
+              <span>Menú Sea Glass</span>
+            </button>
+            <button class="hero-thumb-btn" data-hero-shot="assets/screenshots/tricks_score.png" data-hud-top="360 AIR ^^^^" data-hud-bottom="Puntuación WSL · 8.10">
+              <img src="assets/screenshots/tricks_score.png" alt="Trucos y Puntuación">
+              <span>360 Air · 8.10 pts</span>
+            </button>
+            <button class="hero-thumb-btn" data-hero-shot="assets/screenshots/whitewater_tube.png" data-hud-top="9.7 FT · DOUBLE OVERHEAD" data-hud-bottom="In the Barrel · Whitewater!">
+              <img src="assets/screenshots/whitewater_tube.png" alt="Interior del Tubo">
+              <span>Interior del Tubo</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =====================================================================
+       SECTION 1: CÓMO FUNCIONA EL JUEGO (FÍSICA Y MECÁNICAS)
+       ===================================================================== -->
+  <section id="como-funciona" class="section-wrapper">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">HIDRODINÁMICA ANALÍTICA & CONTROL VR</div>
+        <h2 class="section-title">¿Cómo funciona SurfVR?</h2>
+        <p class="section-subtitle">
+          Cero animaciones enlatadas ni multiplicadores falsos: el océano es una superficie matemática continua gobernada por la batimetría del arrecife o banco de arena.
+        </p>
+      </div>
+
+      <!-- Interactive Wave Evolution Strip -->
+      <div class="wave-cycle-strip glass-card">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+          <span class="chip chip-aqua">CICLO CONTINUO DE LA OLA (WaveSurface.cs)</span>
+          <span style="font-size:0.82rem; color:var(--text-tertiary);">Haz clic en cada fase para inspeccionar su física:</span>
+        </div>
+        <div class="wave-phases-bar">
+          <button class="wave-phase-btn" data-wave-phase="Swell">1. Swell</button>
+          <button class="wave-phase-btn" data-wave-phase="Shoaling">2. Shoaling</button>
+          <button class="wave-phase-btn" data-wave-phase="Peak">3. Peak</button>
+          <button class="wave-phase-btn" data-wave-phase="Lip">4. Lip (Labio)</button>
+          <button class="wave-phase-btn active" data-wave-phase="Barrel">5. Barrel (Tubo)</button>
+          <button class="wave-phase-btn" data-wave-phase="Peel">6. Peel</button>
+          <button class="wave-phase-btn" data-wave-phase="Whitewater">7. Whitewater</button>
+        </div>
+        <div class="wave-phase-detail" id="wave-phase-detail">
+          <div>
+            <strong id="wave-phase-title" style="color:var(--aqua); font-size:1.05rem;">5. Barrel (Cavidad Tubular)</strong>
+            <p id="wave-phase-desc" style="color:var(--text-secondary); font-size:0.92rem; margin-top:4px;">
+              El labio se proyecta hacia adelante creando un cilindro hueco real. Si entras en la zona crítica con <span class="keycap">S</span> (Pull in), activas el cronómetro de tubo y la viñeta aguamarina mientras bombeas con <span class="keycap">W</span> para encontrar la salida antes del closeout.
+            </p>
+          </div>
+          <span class="chip chip-sun" id="wave-phase-metric">Velocidad de bolsillo: 28–45 km/h</span>
+        </div>
+      </div>
+
+      <!-- 4 Core Mechanics Cards -->
+      <div class="mechanics-grid">
+        <div class="glass-card mechanic-card">
+          <span class="chip chip-aqua">FÍSICA CON CONTABILIDAD DE ENERGÍA</span>
+          <h3>Cero Motores Falsos</h3>
+          <p style="color:var(--text-secondary); font-size:0.94rem;">
+            Cada aceleración de la tabla se clasifica en balances de energía reales: gravedad en la pendiente, flotabilidad y sustentación hidrodinámica, agarre lateral de las quillas (<em>fins</em>), arrastre cuadrático y generación de velocidad mediante bombeo (<em>pumping</em>).
+          </p>
+        </div>
+
+        <div class="glass-card mechanic-card">
+          <span class="chip chip-sun">SISTEMA DE JUECES WSL (0.00 – 10.00)</span>
+          <h3>Puntuación por Maniobras Críticas</h3>
+          <p style="color:var(--text-secondary); font-size:0.94rem;">
+            El sistema <code>RideScore</code> evalúa tus olas como en el tour mundial: giros en la parte crítica (<em>Snaps, Carves, Cutbacks</em>), tiempo profundo dentro del tubo (<em>Barrel</em>) y despegues sobre el labio con rotaciones completas (<em>360 Airs</em>).
+          </p>
+        </div>
+
+        <div class="glass-card mechanic-card">
+          <span class="chip chip-mint">VR EN IPHONE / ANDROID + VISOR CARDBOARD</span>
+          <h3>“Donde miras es hacia donde vas”</h3>
+          <p style="color:var(--text-secondary); font-size:0.94rem;">
+            Incluye servidor de streaming de ultra baja latencia y lectura de giroscopio a 60 Hz con corrección de lente estereoscópica. La inclinación de tu cabeza dirige el canto (<em>rail</em>) de la tabla de forma natural.
+          </p>
+        </div>
+
+        <div class="glass-card mechanic-card">
+          <span class="chip chip-violet">CONTROLES EN PANTALLA & REMADA REAL</span>
+          <h3>Del Lineup a la Pared</h3>
+          <p style="color:var(--text-secondary); font-size:0.94rem;">
+            Rema con <span class="keycap">W</span>, gira con <span class="keycap">A</span> <span class="keycap">D</span>, haz el pato (<em>Duck Dive</em>) bajo la espuma blanca con <span class="keycap">Space</span>, llena el medidor de captura (<em>Catch Meter</em>) y ponte de pie (<em>Pop Up</em>) en el momento exacto.
+          </p>
+        </div>
+      </div>
+
+      <!-- Interactive Handling Toggle: Real vs Arcade -->
+      <div class="handling-toggle-card glass-sheet">
+        <div class="handling-header">
+          <div>
+            <span class="section-kicker" style="margin-bottom:4px;">2 FILOSOFÍAS DE MANEJO + ASISTENCIAS</span>
+            <h3 style="font-size:1.5rem; font-weight:800;">Elige tu estilo: Simulación Real vs. Arcade Boost</h3>
+          </div>
+          <div class="segmented-control">
+            <button class="seg-btn" data-handling-mode="real">Modo Real (Simulación)</button>
+            <button class="seg-btn active" data-handling-mode="arcade">Modo Arcade (Aéreos & Pop)</button>
+          </div>
+        </div>
+
+        <div class="handling-compare-grid">
+          <div class="handling-col" id="handling-col-real">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <h4 style="font-size:1.15rem; font-weight:800;">Manejo Real (Hidrodinámica Pura)</h4>
+              <span class="chip">Física Estricta</span>
+            </div>
+            <p style="color:var(--text-secondary); font-size:0.9rem;">
+              Límites reales de cavitación en cantos y quillas. Si fuerzas un giro con demasiadas fuerzas G sin velocidad suficiente, las quillas derrapan (<em>fin slide</em>) o pierdes la línea. Ideal para perfeccionar la lectura de la pared.
+            </p>
+          </div>
+
+          <div class="handling-col active" id="handling-col-arcade">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <h4 style="font-size:1.15rem; font-weight:800;">Manejo Arcade (Reactivo & Aéreo)</h4>
+              <span class="chip chip-aqua">Recomendado Acción</span>
+            </div>
+            <p style="color:var(--text-secondary); font-size:0.9rem;">
+              Mayor respuesta de alabeo (<em>roll</em>), bombeo instantáneo con <span class="keycap">W</span>, impulso vertical desde la cara con <span class="keycap">Space</span> (<em>Space Pop</em>) y proyección sobre el labio para encadenar <strong>360 Airs</strong>. Incluye asistencias opcionales <span class="keycap">H</span> <em>Line Hold</em> y <span class="keycap">J</span> <em>Tube Assist</em>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       SECTION 2: MODALIDADES DE JUEGO (INTERACTIVE TABS)
+       ===================================================================== -->
+  <section id="modalidades" class="section-wrapper">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">MODOS DE JUEGO</div>
+        <h2 class="section-title">Cuatro formas de vivir el océano</h2>
+        <p class="section-subtitle">
+          Desde sesiones puras de surf libre hasta exploración a pie por la playa con misiones del salvavidas, tiendas locales y cámara dron.
+        </p>
+      </div>
+
+      <div class="modes-tabs-wrap">
+        <div class="segmented-control">
+          <button class="seg-btn active" data-mode-tab="freesurf">1. Free Surf</button>
+          <button class="seg-btn" data-mode-tab="hopin">2. Hop Into The Beach (Mundo Abierto)</button>
+          <button class="seg-btn" data-mode-tab="sandbox">3. Session Settings (Sandbox)</button>
+          <button class="seg-btn" data-mode-tab="replay">4. Replay & Cámara Dron</button>
+        </div>
+      </div>
+
+      <!-- TAB 1: FREE SURF -->
+      <div class="mode-panel active" data-mode-panel="freesurf">
+        <div class="glass-sheet mode-split">
+          <div>
+            <div class="flow-stepper">
+              <span class="step-node"><span class="step-dot">✓</span> Beach</span>
+              <span class="step-line"></span>
+              <span class="step-node"><span class="step-dot">✓</span> Board</span>
+              <span class="step-line"></span>
+              <span class="step-node"><span class="step-dot current">●</span> Start</span>
+            </div>
+            <h3 style="font-size:1.8rem; font-weight:800; margin-bottom:10px;">Free Surf: Elige tu playa, tu tabla y cómo entrar</h3>
+            <p style="color:var(--text-secondary); font-size:0.95rem;">
+              En <strong>Free Surf</strong> seleccionas cualquiera de las 5 playas reales con su pronóstico del día y decides tu punto de partida. Haz clic en cualquiera de las 3 modalidades de inicio para actualizar tu sesión activa:
+            </p>
+
+            <div class="start-tiles-grid">
+              <button class="start-tile active" data-start-mode="Lineup">
+                <span class="chip chip-aqua">Clásico</span>
+                <h4>Lineup</h4>
+                <p>Siéntate en el pico exterior, espera las series, haz <em>duck dive</em> bajo la espuma y elige tu ola.</p>
+              </button>
+              <button class="start-tile" data-start-mode="Paddle in">
+                <span class="chip">Acción Rápida</span>
+                <h4>Paddle in</h4>
+                <p>Empieza remando justo cuando la ola de la serie se levanta detrás de ti.</p>
+              </button>
+              <button class="start-tile" data-start-mode="Drop in">
+                <span class="chip chip-sun">Directo al Tubo</span>
+                <h4>Drop in</h4>
+                <p>Comienza ya de pie bajando a máxima velocidad por la pared de la ola.</p>
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <img src="assets/screenshots/start_modes.png" alt="Where do you start?" style="border-radius:var(--r-l); border:1px solid var(--stroke-strong); cursor:zoom-in;" data-lightbox="Selector de inicio en Free Surf: Lineup, Paddle in y Drop in">
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: HOP INTO THE BEACH -->
+      <div class="mode-panel" data-mode-panel="hopin">
+        <div class="glass-sheet mode-split">
+          <div>
+            <span class="chip chip-sun">MUNDO ABIERTO A PIE + MISIONES + ECONOMÍA</span>
+            <h3 style="font-size:1.8rem; font-weight:800; margin:10px 0;">Hop Into The Beach: Camina por la arena y gana dinero</h3>
+            <p style="color:var(--text-secondary); font-size:0.95rem;">
+              Apareces en la orilla con tu tabla bajo el brazo (<span class="keycap">W</span> caminar, <span class="keycap">Shift</span> correr, <span class="keycap">Space</span> lanzarte al agua). Acércate a la torre del salvavidas <strong>Makoa</strong> (<span class="keycap">E</span>) para aceptar retos y ganar entre <strong>$100 y $1,000</strong>.
+            </p>
+
+            <!-- Interactive Mission Checklist Replica -->
+            <div class="mission-card-replica">
+              <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+                <span style="font-size:0.76rem; font-weight:800; color:var(--aqua); letter-spacing:0.08em;">LIFEGUARD MISSIONS (INTERACTIVO — ¡HAZ CLIC!)</span>
+                <div class="segmented-control" style="padding:2px;">
+                  <button class="seg-btn active" style="padding:4px 10px; font-size:0.75rem;" data-mission-tier="easy">Easy · $100</button>
+                  <button class="seg-btn" style="padding:4px 10px; font-size:0.75rem;" data-mission-tier="medium">Med · $250</button>
+                  <button class="seg-btn" style="padding:4px 10px; font-size:0.75rem;" data-mission-tier="hard">Hard · $500</button>
+                  <button class="seg-btn" style="padding:4px 10px; font-size:0.75rem;" data-mission-tier="pro">Pro · $1,000</button>
+                </div>
+              </div>
+              <div class="missions-list" id="missions-list"></div>
+              <p style="font-size:0.76rem; color:var(--text-tertiary); margin-top:10px;">
+                * Marca las 3 misiones arriba para cobrar la recompensa en tu billetera superior y comprar tablas en la sección de abajo.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <img src="assets/screenshots/hop_missions.png" alt="Hop Into The Beach Mode" style="border-radius:var(--r-l); border:1px solid var(--stroke-strong); cursor:zoom-in;" data-lightbox="Modo Hop Into The Beach: Exploración en la arena y torre del salvavidas">
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: SANDBOX / SESSION SETTINGS -->
+      <div class="mode-panel" data-mode-panel="sandbox">
+        <div class="glass-sheet mode-split">
+          <div>
+            <span class="chip chip-aqua">LABORATORIO DE OLAS A MEDIDA</span>
+            <h3 style="font-size:1.8rem; font-weight:800; margin:10px 0;">Session Settings: Diseña tu ola perfecta</h3>
+            <p style="color:var(--text-secondary); font-size:0.95rem; margin-bottom:16px;">
+              Abre el panel de configuración en cualquier momento con <span class="keycap">Esc</span> o <span class="keycap">Tab</span> para ajustar en vivo la altura de la cara, el período del swell, la potencia del labio, el ángulo de <em>peel</em> y elegir entre <strong>8 perfiles de rompiente</strong>:
+            </p>
+            <div style="display:flex; flex-wrap:wrap; gap:8px;">
+              <span class="chip">Beach Break</span>
+              <span class="chip">Point Break</span>
+              <span class="chip chip-aqua">Reef Break</span>
+              <span class="chip chip-mint">Barrel Wave</span>
+              <span class="chip chip-sun">Air Ramp</span>
+              <span class="chip">Mellow Wave</span>
+              <span class="chip chip-coral">Heavy Slab</span>
+              <span class="chip chip-violet">A-Frame Peak</span>
+            </div>
+          </div>
+          <div>
+            <img src="assets/screenshots/pause_menu.png" alt="Session Settings & Pause" style="border-radius:var(--r-l); border:1px solid var(--stroke-strong); cursor:zoom-in;" data-lightbox="Menú Sea Glass en plena sesión en Pipeline">
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 4: REPLAY & DRONE -->
+      <div class="mode-panel" data-mode-panel="replay">
+        <div class="glass-sheet mode-split">
+          <div>
+            <span class="chip chip-violet">REPETICIÓN INSTANTÁNEA & DRON LIBRE</span>
+            <h3 style="font-size:1.8rem; font-weight:800; margin:10px 0;">Replay Player & Cámara Dron</h3>
+            <p style="color:var(--text-secondary); font-size:0.95rem; margin-bottom:16px;">
+              Al terminar una ola, presiona <span class="keycap">P</span> para abrir la cápsula de repetición. La línea de tiempo marca automáticamente tu <strong>Pop up</strong>, <strong>Barrel</strong> y <strong>Airs</strong>. Cambia la velocidad entre <code>0.25×</code>, <code>0.5×</code>, <code>1×</code> y <code>2×</code> o activa el modo <strong>Drone Free</strong> para volar libremente alrededor del tubo con <span class="keycap">W</span><span class="keycap">A</span><span class="keycap">S</span><span class="keycap">D</span> + <span class="keycap">Shift</span>.
+            </p>
+          </div>
+          <div>
+            <img src="assets/screenshots/tricks_score.png" alt="Replay & Scoring" style="border-radius:var(--r-l); border:1px solid var(--stroke-strong); cursor:zoom-in;" data-lightbox="Sistema de puntuación y repetición de maniobras">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       SECTION 3: LAS 5 PLAYAS LEGENDARIAS (REACTIVE FORECAST)
+       ===================================================================== -->
+  <section id="playas" class="section-wrapper">
+    <div class="container">
+      <div class="beaches-header-controls">
+        <div>
+          <div class="section-kicker">5 SPOTS REALES DEL MUNDO</div>
+          <h2 class="section-title" style="margin-bottom:4px;">Choose your beach</h2>
+          <p style="color:var(--text-secondary); font-size:0.95rem;">Haz clic en una playa para seleccionarla o prueba a cambiar las condiciones del mar en tiempo real:</p>
+        </div>
+
+        <div style="display:flex; flex-direction:column; align-items:flex-end; gap:8px;">
+          <div class="segmented-control">
+            <button class="seg-btn active" data-forecast-mode="real">Real (Pronóstico del día)</button>
+            <button class="seg-btn" data-forecast-mode="custom">Custom (Simular condición)</button>
+          </div>
+          <div class="segmented-control" id="custom-condition-bar" style="display:none;">
+            <button class="seg-btn" data-cond-set="VeryPoor"><span class="dot" style="background:var(--coral);width:8px;height:8px;border-radius:50%;"></span>Very Poor</button>
+            <button class="seg-btn" data-cond-set="Poor"><span class="dot" style="background:var(--sun-deep);width:8px;height:8px;border-radius:50%;"></span>Poor</button>
+            <button class="seg-btn" data-cond-set="Good"><span class="dot" style="background:var(--mint);width:8px;height:8px;border-radius:50%;"></span>Good</button>
+            <button class="seg-btn active" data-cond-set="VeryGood"><span class="dot" style="background:var(--aqua);width:8px;height:8px;border-radius:50%;"></span>Very Good</button>
+            <button class="seg-btn" data-cond-set="Epic"><span class="dot" style="background:var(--violet);width:8px;height:8px;border-radius:50%;"></span>Epic</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reactive 5 Beaches Grid -->
+      <div class="beaches-grid" id="beaches-grid"></div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       SECTION 4: EL QUIVER — LAS 7 TABLAS INTERACTIVAS
+       ===================================================================== -->
+  <section id="tablas" class="section-wrapper">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">SHAPER'S SHOWROOM · 7 MODELOS FÍSICOS</div>
+        <h2 class="section-title">Choose your board</h2>
+        <p class="section-subtitle">
+          Cada tabla en <code>BoardProfile.cs</code> altera la flotabilidad, velocidad de remada, radio de giro y agarre en olas grandes. Selecciona cualquiera de las 7 tablas para inspeccionar su rendimiento:
+        </p>
+      </div>
+
+      <div class="quiver-layout">
+        <!-- Left Pedestal Stage -->
+        <div class="glass-sheet quiver-stage">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+            <span class="chip chip-aqua">SHOWROOM 3D PEDESTALS</span>
+            <span style="font-size:0.82rem; color:var(--text-tertiary);">Haz clic en una tabla para ver sus medidas y comprarla con tu dinero reactivo</span>
+          </div>
+
+          <!-- 7 Interactive Board Pedestals -->
+          <div class="boards-pedestal-grid" id="boards-carousel"></div>
+
+          <!-- Pager Dots -->
+          <div class="board-pager">
+            <button class="btn-secondary" id="board-prev" style="padding:6px 12px;">‹</button>
+            <div class="pager-dots" id="board-pager-dots"></div>
+            <button class="btn-secondary" id="board-next" style="padding:6px 12px;">›</button>
+          </div>
+
+          <img src="assets/screenshots/board_picker.png" alt="Choose your board in SurfVR" style="border-radius:var(--r-l); border:1px solid var(--stroke); cursor:zoom-in;" data-lightbox="Selector de las 7 tablas en el agua con estadísticas Ride Feel">
+        </div>
+
+        <!-- Right Inspector Sheet (Replica of BoardShowroom.cs) -->
+        <div class="glass-sheet board-inspector-sheet">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+              <span id="inspector-counter" style="font-size:0.75rem; font-weight:800; color:var(--text-tertiary); letter-spacing:0.08em;">BOARD 1 OF 7</span>
+              <span id="inspector-price-badge" class="chip chip-mint">GRATIS · TABLA INICIAL</span>
+            </div>
+            <h3 id="inspector-name" style="font-size:2.3rem; font-weight:800; line-height:1.08;">FUNBOARD</h3>
+            <p id="inspector-dims" style="color:var(--text-tertiary); font-weight:700; font-size:0.9rem; margin:4px 0 12px 0;">7'10" × 22" × 2.76" · 45 L</p>
+            <p id="inspector-desc" style="color:var(--text-secondary); font-size:0.95rem; margin-bottom:14px;">
+              Media eslora noble y estable: rema con facilidad, atrapa la ola temprano y ofrece transiciones suaves de canto a canto.
+            </p>
+            <div id="inspector-tags" style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:22px;"></div>
+
+            <div style="font-size:0.75rem; font-weight:800; color:var(--text-tertiary); letter-spacing:0.08em; margin-bottom:12px;">RIDE FEEL</div>
+            <div style="display:flex; flex-direction:column; gap:12px;">
+              <div class="stat-row"><span>Turning</span><div class="segments-bar" id="stat-turning"></div></div>
+              <div class="stat-row"><span>Stability</span><div class="segments-bar" id="stat-stability"></div></div>
+              <div class="stat-row"><span>Paddle</span><div class="segments-bar" id="stat-paddle"></div></div>
+              <div class="stat-row"><span>Big waves</span><div class="segments-bar" id="stat-bigwaves"></div></div>
+              <div class="stat-row"><span>Small waves</span><div class="segments-bar" id="stat-smallwaves"></div></div>
+            </div>
+          </div>
+
+          <div>
+            <div id="inspector-shops" style="padding:12px 14px; border-radius:var(--r-m); background:rgba(255,255,255,0.04); border:1px solid var(--divider); font-size:0.82rem; color:var(--text-secondary); margin-bottom:14px;">
+              Incluida en tu inventario desde el primer día.
+            </div>
+            <button id="inspector-action-btn" class="btn-primary" style="width:100%; padding:15px; font-size:1rem;">
+              Ride this board →
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       SECTION 5: PERSONALIZACIÓN TOTAL & LAS 4 TIENDAS DE PLAYA
+       ===================================================================== -->
+  <section id="personalizacion" class="section-wrapper">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">CUSTOMIZE BOARDS & EDIT SURFER</div>
+        <h2 class="section-title">Personalización al detalle</h2>
+        <p class="section-subtitle">
+          Pinta cada zona de tu tabla en vivo aquí mismo y explora el editor completo de surfista y las 4 tiendas locales de playa.
+        </p>
+      </div>
+
+      <div class="customizer-grid">
+        <!-- Interactive Board Paint Studio -->
+        <div class="glass-sheet paint-studio-card">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+            <div>
+              <span class="section-kicker" style="margin-bottom:2px;">SHOWROOM INTERACTIVO EN VIVO</span>
+              <h3 style="font-size:1.5rem; font-weight:800;">Customize boards (Fill · Rail · Fins)</h3>
+            </div>
+            <button id="paint-reset" class="btn-secondary" style="padding:6px 12px; font-size:0.8rem;">↺ Reset stock colours</button>
+          </div>
+
+          <!-- Live SVG Surfboard that updates colors reactively -->
+          <div class="board-svg-stage">
+            <svg viewBox="0 0 360 150" width="100%" height="180" style="max-width:420px; filter: drop-shadow(0 16px 24px rgba(0,0,0,0.55));">
+              <!-- Fins -->
+              <g id="svg-board-fins" fill="#1FB5C1">
+                <path d="M68 42 L42 24 L52 50 Z"/>
+                <path d="M68 108 L42 126 L52 100 Z"/>
+                <path d="M48 75 L22 65 L28 85 Z"/>
+              </g>
+              <!-- Outer Rail -->
+              <path id="svg-board-rail" fill="#5CE6E0" d="M28 75 C50 22, 165 16, 336 75 C165 134, 50 128, 28 75 Z"/>
+              <!-- Inner Deck Fill -->
+              <path id="svg-board-fill" fill="#FFF9D2" d="M38 75 C58 30, 164 25, 324 75 C164 125, 58 120, 38 75 Z"/>
+              <!-- Center Wood Stringer -->
+              <line x1="32" y1="75" x2="330" y2="75" stroke="rgba(7,19,29,0.35)" stroke-width="2"/>
+            </svg>
+          </div>
+
+          <!-- Segmented Part Picker -->
+          <div style="display:flex; justify-content:center;">
+            <div class="segmented-control">
+              <button class="seg-btn active" data-paint-part="fill">
+                <span id="dot-fill" style="width:10px;height:10px;border-radius:50%;background:#FFF9D2;border:1px solid #fff;"></span>
+                Fill (Cubierta)
+              </button>
+              <button class="seg-btn" data-paint-part="rail">
+                <span id="dot-rail" style="width:10px;height:10px;border-radius:50%;background:#5CE6E0;border:1px solid #fff;"></span>
+                Rail (Cantos)
+              </button>
+              <button class="seg-btn" data-paint-part="fins">
+                <span id="dot-fins" style="width:10px;height:10px;border-radius:50%;background:#1FB5C1;border:1px solid #fff;"></span>
+                Fins (Quillas)
+              </button>
+            </div>
+          </div>
+
+          <!-- 14 Stock Swatches -->
+          <div class="swatches-grid" id="paint-swatches"></div>
+
+          <!-- Live HSV Sliders -->
+          <div class="hsv-sliders">
+            <div class="hsv-row"><span>HUE</span><input type="range" id="hue-slider" min="0" max="360" value="180"></div>
+            <div class="hsv-row"><span>SAT</span><input type="range" id="sat-slider" min="0" max="100" value="75"></div>
+            <div class="hsv-row"><span>BRI</span><input type="range" id="bri-slider" min="20" max="100" value="90"></div>
+          </div>
+        </div>
+
+        <!-- Interactive Character Editor Showcase -->
+        <div class="glass-sheet surfer-studio-card">
+          <div>
+            <span class="section-kicker" style="margin-bottom:2px;">SURFER LOOK & OUTFITS</span>
+            <h3 style="font-size:1.5rem; font-weight:800; margin-bottom:10px;">Edit surfer: Cuerpo, Stance y Ropa</h3>
+            <p style="color:var(--text-secondary); font-size:0.92rem; margin-bottom:14px;">
+              Personaliza tu avatar con 48 animaciones fluidas. Prueba las pestañas del editor para configurar tu surfista:
+            </p>
+
+            <div class="segmented-control" style="margin-bottom:14px;">
+              <button class="seg-btn active" data-surfer-tab="body">Body & Stance</button>
+              <button class="seg-btn" data-surfer-tab="skin">Skin (8 tonos)</button>
+              <button class="seg-btn" data-surfer-tab="hair">Hair & Beard</button>
+              <button class="seg-btn" data-surfer-tab="outfit">Outfit (14 colores)</button>
+            </div>
+
+            <div id="surfer-controls-area" style="padding:14px; border-radius:var(--r-m); background:rgba(4,12,19,0.5); border:1px solid var(--divider); margin-bottom:14px;"></div>
+
+            <div id="surfer-live-summary" style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px;"></div>
+          </div>
+
+          <img src="assets/screenshots/character_editor.png" alt="Edit Surfer" style="border-radius:var(--r-l); border:1px solid var(--stroke-strong); cursor:zoom-in;" data-lightbox="Editor de Surfista 3D con estética Sea Glass">
+        </div>
+      </div>
+
+      <!-- LAS 4 SURF SHOPS LOCALES -->
+      <div id="tiendas" style="padding-top:24px;">
+        <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:12px; margin-bottom:20px;">
+          <div>
+            <span class="section-kicker">ECONOMÍA DE PLAYA & ROPA OFICIAL</span>
+            <h3 style="font-size:1.9rem; font-weight:800;">Las 4 Surf Shops Locales</h3>
+          </div>
+          <span style="color:var(--text-secondary); font-size:0.9rem;">Cada tienda imprime el emblema oficial de su playa en el pecho de tus trajes y lycras:</span>
+        </div>
+
+        <div class="shops-grid">
+          <div class="glass-card shop-card">
+            <div class="shop-logo-wrap"><img src="assets/logos/logo_pipeline.png" alt="Pipeline Logo"></div>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span class="chip chip-sun">Tendero: Kai</span>
+              <span class="chip">Oahu, Hawaii</span>
+            </div>
+            <h4 style="font-size:1.15rem; font-weight:800;">North Shore Surf Shack</h4>
+            <p style="font-size:0.85rem; color:var(--text-secondary);">
+              Vende <strong>Shortboard ($400)</strong>, <strong>Twin ($350)</strong>, <strong>Softboard ($150)</strong> y ropa exclusiva <em>Pipe Crew Rashguard</em> y <em>Aloha Boardshorts</em>.
+            </p>
+          </div>
+
+          <div class="glass-card shop-card">
+            <div class="shop-logo-wrap"><img src="assets/logos/logo_nazare.png" alt="Nazaré Logo"></div>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span class="chip chip-sun">Tendero: Tiago</span>
+              <span class="chip">Portugal</span>
+            </div>
+            <h4 style="font-size:1.15rem; font-weight:800;">Praia do Norte Big Wave Shop</h4>
+            <p style="font-size:0.85rem; color:var(--text-secondary);">
+              El único lugar donde conseguir la mítica <strong>Gun 9'6" ($900)</strong> para olas gigantes, además del <em>Nazaré Storm Wetsuit</em> con el emblema del faro.
+            </p>
+          </div>
+
+          <div class="glass-card shop-card">
+            <div class="shop-logo-wrap"><img src="assets/logos/logo_chicama.png" alt="Chicama Logo"></div>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span class="chip chip-sun">Tendero: Lucho</span>
+              <span class="chip">Perú</span>
+            </div>
+            <h4 style="font-size:1.15rem; font-weight:800;">Malabrigo Surf Club</h4>
+            <p style="font-size:0.85rem; color:var(--text-secondary);">
+              Especialistas en planeo largo: vende el <strong>Longboard 9'0" ($500)</strong>, <strong>Fish ($300)</strong>, <em>Chicama Left Rashguard</em> e <em>Inca Red Boardshorts</em>.
+            </p>
+          </div>
+
+          <div class="glass-card shop-card">
+            <div class="shop-logo-wrap"><img src="assets/logos/logo_jbay.png" alt="J-Bay Logo"></div>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span class="chip chip-sun">Tendero: Sipho</span>
+              <span class="chip">South Africa</span>
+            </div>
+            <h4 style="font-size:1.15rem; font-weight:800;">Supertubes Board Room</h4>
+            <p style="font-size:0.85rem; color:var(--text-secondary);">
+              Velocidad pura para derechas: <strong>Shortboard</strong>, <strong>Twin</strong>, <strong>Fish</strong> y los trajes exclusivos <em>Supertubes Wetsuit</em> y <em>J-Bay Green Rashguard</em>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       SECTION 6: GALERÍA DE CAPTURAS "SEA GLASS"
+       ===================================================================== -->
+  <section id="galeria" class="section-wrapper">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">INTERFAZ Y GAMEPLAY EN VIVO</div>
+        <h2 class="section-title">Galería Sea Glass</h2>
+        <p class="section-subtitle">Haz clic en cualquier captura para ampliarla a pantalla completa.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-card" data-lightbox="Menú Principal Sea Glass: 'Where you look is where you go.'">
+          <img src="assets/screenshots/main_menu.png" alt="Main Menu">
+          <span>Menú Principal Sea Glass</span>
+        </div>
+        <div class="gallery-card" data-lightbox="Selector de las 5 playas reales con condiciones Surfline">
+          <img src="assets/screenshots/beach_selector.png" alt="Choose your beach">
+          <span>Choose your beach</span>
+        </div>
+        <div class="gallery-card" data-lightbox="Showroom de las 7 tablas en el agua">
+          <img src="assets/screenshots/board_picker.png" alt="Choose your board">
+          <span>Choose your board</span>
+        </div>
+        <div class="gallery-card" data-lightbox="Estudio de pintura de tablas: Fill, Rail y Fins">
+          <img src="assets/screenshots/board_showroom.png" alt="Customize boards">
+          <span>Customize boards (Paint Studio)</span>
+        </div>
+        <div class="gallery-card" data-lightbox="Editor 3D de surfista: Cuerpo, Stance, Piel y Trajes">
+          <img src="assets/screenshots/character_editor.png" alt="Edit surfer">
+          <span>Edit surfer</span>
+        </div>
+        <div class="gallery-card" data-lightbox="Corriendo el tubo a 32 km/h con HUD minimalista">
+          <img src="assets/screenshots/barrel_ride.png" alt="Barrel Ride">
+          <span>Corriendo el Tubo · 32 km/h</span>
+        </div>
+        <div class="gallery-card" data-lightbox="Maniobra 360 Air con calificación Excellent (8.10)">
+          <img src="assets/screenshots/tricks_score.png" alt="360 Air">
+          <span>360 Air · 8.10 Excellent</span>
+        </div>
+        <div class="gallery-card" data-lightbox="Interior de la cavidad del tubo y alerta Whitewater">
+          <img src="assets/screenshots/whitewater_tube.png" alt="Whitewater Tube">
+          <span>Cavidad del Tubo & Whitewater</span>
+        </div>
+        <div class="gallery-card" data-lightbox="Selector de inicio: Lineup, Paddle in y Drop in">
+          <img src="assets/screenshots/start_modes.png" alt="Start Modes">
+          <span>Where do you start?</span>
+        </div>
+        <div class="gallery-card" data-lightbox="Modo Hop Into The Beach: Caminando hacia la torre del salvavidas">
+          <img src="assets/screenshots/hop_missions.png" alt="Hop Missions">
+          <span>Hop Into The Beach & Misiones</span>
+        </div>
+        <div class="gallery-card" data-lightbox="Interior de North Shore Surf Shack con el tendero Kai">
+          <img src="assets/screenshots/surf_shop.png" alt="Surf Shop">
+          <span>North Shore Surf Shack</span>
+        </div>
+        <div class="gallery-card" data-lightbox="Panel de Ajustes: Calidad gráfica, sonido y servidor iPhone VR">
+          <img src="assets/screenshots/settings.png" alt="Settings">
+          <span>Ajustes & Servidor iPhone VR</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       SECTION 7: ZONA DE DESCARGAS FINAL
+       ===================================================================== -->
+  <section id="descargas" class="section-wrapper">
+    <div class="container">
+      <div class="glass-sheet" style="text-align:center; max-width:1040px; margin:0 auto;">
+        <span class="chip chip-aqua">DISPONIBLE PARA TODAS TUS PLATAFORMAS</span>
+        <h2 class="section-title" style="margin-top:12px;">Salta al agua ahora</h2>
+        <p class="section-subtitle" style="max-width:680px; margin:0 auto 32px auto;">
+          Descarga el instalador directo <code>.exe</code> para Windows, encuéntralo en el App Store para macOS e iPhone, o instala directamente el paquete <code>.apk</code> en tu dispositivo Android.
+        </p>
+
+        <div class="download-grid" style="max-width:860px; margin:0 auto;">
+          <!-- Windows .EXE -->
+          <a href="./downloads/SurfVR-Windows-x64.exe" class="dl-btn dl-windows" data-download-platform="windows">
+            <div class="dl-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3 3h8.5v8.5H3V3zm9.5 0H21v8.5h-8.5V3zM3 12.5h8.5V21H3v-8.5zm9.5 0H21V21h-8.5v-8.5z"/>
+              </svg>
+            </div>
+            <div class="dl-meta">
+              <span class="dl-sub">PC / Escritorio</span>
+              <span class="dl-main">Descargar para Windows</span>
+              <span class="dl-ext">Instalador .EXE (64-bit)</span>
+            </div>
+          </a>
+
+          <!-- macOS App Store -->
+          <a href="https://apps.apple.com/app/surfvr-macos" class="dl-btn dl-macos" data-download-platform="macos">
+            <div class="dl-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.33c.64-.78 1.08-1.86.96-2.94-.93.04-2.06.62-2.72 1.4-.58.68-1.1 1.79-.96 2.84 1.04.08 2.08-.52 2.72-1.3z"/>
+              </svg>
+            </div>
+            <div class="dl-meta">
+              <span class="dl-sub">Download on the</span>
+              <span class="dl-main">Mac App Store</span>
+              <span class="dl-ext">macOS Universal</span>
+            </div>
+          </a>
+
+          <!-- iPhone App Store -->
+          <a href="https://apps.apple.com/app/surfvr-ios" class="dl-btn dl-iphone" data-download-platform="iphone">
+            <div class="dl-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm3.41 14.59a.996.996 0 01-1.37-.36l-.77-1.33H8.73l-.77 1.33a1 1 0 01-1.73-1l2.86-4.95-1.03-1.78a1 1 0 111.73-1l.58 1 .58-1a1 1 0 111.73 1l-3.27 5.66h3.54l-.95-1.65a1 1 0 011.73-1l1.94 3.36c.28.48.11 1.09-.36 1.37zm1.59-3.69h-2.12a1 1 0 110-2H17a1 1 0 110 2z"/>
+              </svg>
+            </div>
+            <div class="dl-meta">
+              <span class="dl-sub">Download on the</span>
+              <span class="dl-main">App Store</span>
+              <span class="dl-ext">iPhone & Visor VR</span>
+            </div>
+          </a>
+
+          <!-- Android Robot + Available on Android (.APK) -->
+          <a href="./downloads/SurfVR-Android.apk" class="dl-btn dl-android" data-download-platform="android">
+            <div class="dl-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85a.637.637 0 00-.83.22l-1.88 3.24a11.43 11.43 0 00-8.94 0L5.65 5.67a.643.643 0 00-.87-.2c-.28.18-.37.54-.22.83L6.4 9.48A10.81 10.81 0 001 18h22a10.81 10.81 0 00-5.4-8.52zM7 15.25a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5zm10 0a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5z"/>
+              </svg>
+            </div>
+            <div class="dl-meta">
+              <span class="dl-sub">Paquete Directo .APK</span>
+              <span class="dl-main">Available on Android</span>
+              <span class="dl-ext">Descargar SurfVR.apk</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><strong>SurfVR</strong> — “Where you look is where you go.” · Diseño Sea Glass sincronizado con el motor analítico de olas en Unity.</p>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-modal" id="lightbox-modal">
+    <div class="lightbox-inner">
+      <img id="lightbox-img" src="" alt="Vista ampliada">
+      <div class="lightbox-footer">
+        <span id="lightbox-caption" style="font-weight:700;"></span>
+        <button id="lightbox-close" class="btn-secondary">Cerrar (Esc)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
