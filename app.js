@@ -10,16 +10,16 @@
  */
 window.SURFVR_DOWNLOADS = {
   windows: {
-    url: "./downloads/SurfVR-Windows-x64.exe",
-    filename: "SurfVR-Windows-x64.exe",
+    url: "https://drive.google.com/file/d/1IkY6FwfZJidIM3eZkM0fSaNDO-UQRrYn/view?usp=sharing",
+    external: true,
     platformName: "PC / Windows (.EXE)",
     badge: "Instalador Windows 10/11 (64-bit)"
   },
   macos: {
-    url: "https://apps.apple.com/app/surfvr-macos",
+    url: "https://drive.google.com/file/d/1Ft2yWVxC2QYtQHJuW-Ngish7bx2aAApS/view?usp=sharing",
     external: true,
-    platformName: "macOS (Mac App Store)",
-    badge: "Apple Silicon & Intel Universal"
+    platformName: "macOS (.DMG Directo)",
+    badge: "Apple Silicon & Intel Universal (.DMG)"
   },
   iphone: {
     url: "https://apps.apple.com/app/surfvr-ios",
